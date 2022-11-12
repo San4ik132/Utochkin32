@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Z2
+{
+    class Program
+    {
+        static void Main()
+        {
+
+            double[] arr = new double[7];
+            int o = 0;
+            string text = Console.ReadLine();
+            string[] m = text.Split(new Char[] { ' ' });
+            foreach (string item1 in m)
+            {
+                double num = double.Parse(item1);
+                arr[o] = num;
+                o++;
+            }
+
+
+
+            Console.WriteLine("Вывод массива");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+
+
+
+            Array.Sort(arr);
+
+
+            Console.WriteLine("\nЧётные элементы");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if ((int)arr[i] % 2 == 0 && arr[i] > 0) Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine("\nНечётные элементы");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if ((int)(arr[i]) % 2 == 1 && arr[i] > 0)
+                {
+                    if (arr[i] > 5.0)
+                        Console.Write(arr[i] + " ");
+                }
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
