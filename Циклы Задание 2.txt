@@ -1,0 +1,23 @@
+using System;
+
+
+namespace Z2
+{
+    class Program
+    {
+        static void Main()
+        {
+            int i = int.Parse(Console.ReadLine());
+            int c = 0;
+            while (i > 1)
+            {
+                if ((i % 2) == 0)
+                    i /= 2;
+                else
+                    i = (i * 3) + 1;
+                c++;
+            }
+            Console.WriteLine($"Количество необходимых действий над числом - {c}");
+        }
+    }
+}
