@@ -1,0 +1,26 @@
+using System;
+
+namespace Z
+{
+    class Program
+    {
+        static void Main()
+        {
+            int n = int.Parse(Console.ReadLine());
+            int i = 0, hours = 12, minutes = 30;
+            float angle = 0, a = 165, H = 0, M = 0;
+            while (i != n)
+            {
+                if (minutes == 60) { hours++; minutes = 0; }
+                minutes++;
+                H = 0.5f * (hours * 60 + minutes);
+                M = 6 * minutes;
+                angle = Math.Abs(H - M);
+                angle = Math.Min(angle, 360 - angle);
+                if (a < 30 && angle >= 30) i++;
+                a = angle;
+            }
+            Console.WriteLine("{0} : {1}", hours, minutes);
+        }
+    }
+}
