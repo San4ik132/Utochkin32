@@ -1,0 +1,28 @@
+using System;
+
+namespace ProgLang
+{
+    class Program
+    {
+        static void Main()
+        {
+
+            string uwu = Console.ReadLine();
+            string owo = Console.ReadLine();
+      
+            for (int i = 0; i < uwu.Length; i++)
+            {
+                for (int s = 0; s < owo.Length; s++)
+                {
+                    
+                    if (uwu[i] == owo[s]) break;
+                    if (s == owo.Length - 1 && owo[s] != uwu[i])
+                    if ((i == 0 || uwu[i] > uwu[i - 1]) && (i == uwu.Length - 1 || uwu[i] < uwu[i + 1]))
+                    Console.WriteLine("Уникальное число " + uwu[i] + " ");
+                    
+                }
+            }
+         
+        }
+    }
+}
