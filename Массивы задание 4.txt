@@ -1,0 +1,33 @@
+using System;
+
+namespace ProgLang
+{
+    class Program
+    {
+        static void Main()
+        {
+
+            Console.WriteLine("Введите через запятую значения от 2 до 5 Пример: 2,4,3,5");
+            string text = Console.ReadLine();
+            if (text.Contains("2") )
+            {
+                Console.WriteLine("Ну что, студент, пора долг Родине отдать");
+                return;
+            }
+            else if (text.Contains("3"))
+            {
+                Console.WriteLine("Прощай стипендия");
+                return;
+            }
+            else if (text.Contains("4"))
+            {
+                Console.WriteLine("Живи пока, через полгода увидимся");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("О, отличник появился! На олимпиаду пойдешь");
+            }
+        }
+    }
+}
