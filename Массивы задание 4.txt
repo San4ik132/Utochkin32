@@ -18,7 +18,7 @@ namespace ProgLang
                 arr[o] = num;
                 o++;
             }
-            //Console.WriteLine("Введите через запятую значения от 2 до 5 Пример: 2,4,3,5");
+            
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == 2)
