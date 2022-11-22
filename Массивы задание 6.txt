@@ -1,0 +1,47 @@
+using System;
+
+namespace ProgLang
+{
+    class Program
+    {
+        static void Main()
+        {
+
+            Console.WriteLine("Введите в консоль 10 элементов чере пробел ");
+            int[] arr = new int[10];
+            int o = 0;
+            string text = Console.ReadLine();
+            string[] m = text.Split(new Char[] { ' ' });
+            foreach (string item1 in m)
+            {
+                int num = int.Parse(item1);
+                arr[o] = num;
+                o++;
+            }
+        
+            Console.WriteLine();
+            /* Отсортируем массив по возрастанию */
+            for (int i = 1; i < arr.Length; ++i)
+            {
+                for (int r = 0; r < arr.Length - i; r++)
+                {
+                    if (arr[r] > arr[r + 1])
+                    {
+                        // Обмен местами
+                        int temp = arr[r];
+                        arr[r] = arr[r + 1];
+                        arr[r + 1] = temp;
+                    }
+                }
+            }
+
+            /* Выведем отсортированный массив */
+
+            for (int i = 0; i < arr.Length; ++i)
+            {
+                Console.Write(arr[i] + " ");
+            }
+
+        }
+    }
+}
