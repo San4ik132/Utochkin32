@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+namespace Z
+{
+
+    class Program
+    {
+        static void PrintSum(List<int> Mass)
+        {
+            int sum = 0;
+            for (int i = 0; i < Mass.Count; i++)
+            {
+                sum += Mass[i];
+            }
+            Console.WriteLine(sum);
+        }
+         static List<int> GetCubes(int startValue, int endValue ) {
+            List<int> Mass = new List<int>();
+            for (int i = startValue; i <= endValue; i++)
+            {
+                Mass.Add((int)(Math.Pow(i, 3)));
+            }
+            return Mass;
+         }
+            public static void Main()
+            {
+                int startValue = int.Parse(Console.ReadLine());
+                int endValue = int.Parse(Console.ReadLine());
+                PrintSum(GetCubes(startValue, endValue));
+            }
+    }
+}

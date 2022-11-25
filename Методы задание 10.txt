@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+
+namespace Z
+{
+    public class MainClass
+    {
+        static void Print(int[] ip3)
+        {
+            int sum = 0;
+            for (int i = 0; i < ip3.Length; i++)
+            {
+                Console.Write(ip3[i]+" ");
+            }
+            Console.WriteLine();
+        }
+        static int[] ArraySum(int[] ip, int[] ip2)
+        {
+            if (ip.Length <= ip2.Length)
+            {
+                int p = 0;
+                p = ip2.Length - ip.Length;
+                Array.Resize(ref ip, ip.Length + p);
+            }
+            else
+            {
+                int t = 0;
+                t = ip.Length - ip2.Length;
+                Array.Resize(ref ip2, ip2.Length + t);
+            }
+
+            for (int i = 0; i < ip.Length; i++)
+            {
+                Console.Write(ip[i] + " ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < ip2.Length; i++)
+            {
+                Console.Write(ip2[i] + " ");
+            }
+            Console.WriteLine();
+
+            int[] ip3 = new int[ip.Length];
+
+            for (int i = 0; i < ip.Length; i++)
+            {
+                ip3[i] = ip[i] + ip2[i];
+            }
+            return ip3;
+        }
+   
+        public static void Main()
+        {
+            int[] ip = new int[5]  {2,4,3,1,5};
+            int[] ip2 = new int[6] {2,4,3,5,3,4};
+            Print(ArraySum(ip, ip2));
+        }
+    }
+}

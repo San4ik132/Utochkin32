@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+
+namespace Z
+{
+    public class MainClass
+    {
+        static void ArraySum(string text)
+        {
+            string L = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            int m = 0;
+            for(int i = 0; i < text.Length; i++)
+            {
+                for (int j = 0; j < L.Length; j++)
+                {
+                    if (text[i] == L[j]) m++;
+                }
+            }
+            if (m > 0) Console.WriteLine("В тексте есть латинские буквы");
+            else Console.WriteLine("В тексте нет латиских букв");
+        }
+        public static void Main()
+        { 
+            string text = Console.ReadLine();
+            Console.WriteLine();
+            ArraySum(text);
+        }
+    }
+}
