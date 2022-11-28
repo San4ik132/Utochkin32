@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace PPP
+{
+    class Program
+    {
+        static void Main()
+        {
+
+            Console.WriteLine("Введите список через пробел:");
+            List<int> Zep = new List<int>();
+            string input = Console.ReadLine();
+            string[] oper = input.Split(' ');
+            for (int i = 0; i < oper.Length; i++) oper[i]?.Replace(" ", ""); 
+            foreach( string ttt in oper) Zep.Add(int.Parse(ttt.ToString()));
+            int index  = Zep.IndexOf(0);
+            int index2 = Zep.LastIndexOf(0);
+            List<int> EZ = new List<int>();
+            for (int i = index+1; i < index2; i++) EZ.Add(Zep[i]);
+            Console.WriteLine("Значения между нулями в порядке убывания");
+            EZ.Sort();
+            EZ.Reverse();
+            for (int i = 0; i < EZ.Count; i++) Console.Write(EZ[i] + " ");
+            Console.ReadLine();
+        }
+    }
+}

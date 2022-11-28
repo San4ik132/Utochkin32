@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PPP
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Введите << Казнить, нельзя помиловать! >> или << Отдых, потом задачи! >>  :");
+            List<char> Zep = new List<char>();
+            string input = Console.ReadLine();
+            foreach (char ttt in input) Zep.Add(ttt);
+            int index = Zep.IndexOf(',');
+            Zep.RemoveAt(index);
+            int inx = Zep.LastIndexOf(' ');
+            Zep.Insert(inx, ',');
+            for (int i = 0; i < Zep.Count; i++) Console.Write(Zep[i]);
+            Console.ReadLine();
+        }
+    }
+}
