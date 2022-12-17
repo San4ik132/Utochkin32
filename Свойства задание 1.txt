@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+
+public class MainClass
+{
+    public class Tree
+    {
+        private string typ;
+        private int pip;
+
+        public Tree()
+        {
+            pip = 0;
+            typ = string.Empty;
+        }
+        public Tree(string typ1, int pip1)
+        {
+            pip = pip1;
+            typ = typ1;
+
+
+        }
+        ~Tree() { }
+
+    }
+
+
+    public static void Main()
+    {
+            var tree1 = new Tree("сосна", -6);
+            var tree2 = new Tree("береза", 80);
+
+        Console.ReadLine();
+    }
+}

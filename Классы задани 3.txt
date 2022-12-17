@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+
+public class MainClass
+{
+    public class Point
+    {
+        private double x;
+        private double y;
+        private double z;
+        public Point()
+        {
+            x = y = z = 0;
+        }
+        public Point(double x1, double y1, double z1)
+        {
+            x = x1;
+            y = y1;
+            z = z1;
+        }
+
+        ~Point() { }
+        public double Distance(Point a, Point b)
+        {
+            double JJJ = 0;
+            JJJ = Math.Round(Math.Sqrt(Math.Pow((b.x - a.x), 2) + Math.Pow((b.y - a.y), 2) + Math.Pow((b.z - a.z), 2)), 5);
+            return JJJ;
+        }
+        public double Way(Point a, Point b)
+        {
+            double JJJ = 0;
+            JJJ = Math.Round((Math.Sqrt(Math.Pow(b.x - a.x, 2) + Math.Pow(b.z - a.z, 2)) + (a.y - b.y)), 5);
+            return JJJ;
+        }
+    }
+    public static void Main()
+    {
+        Point p = new Point();
+        Point Павук = new Point(2, 3, 1);
+        Point Муха = new Point(2, 0, 0);
+        double J = p.Way(Павук, Муха);
+        double m = p.Distance(Павук, Муха);
+        Console.WriteLine(m);
+        Console.WriteLine(J);
+        Console.ReadLine();
+    }
+}

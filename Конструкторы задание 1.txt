@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+
+public class MainClass
+{
+    public class Watch
+    {
+        private string a;
+        private string b;
+        private decimal c;
+        public Watch()
+        {
+            c = 0;
+            b = a = string.Empty;
+        }
+        public Watch(string a1, string b1, decimal c1)
+        {
+            a = a1;
+            b = b1;
+            c = c1;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"{a} {b} {c}");
+        }
+
+    }
+    public static void Main()
+    {
+        var myWatch = new Watch("Casio", "electronic", 15.99m);
+        myWatch.Print();
+    }
+}
